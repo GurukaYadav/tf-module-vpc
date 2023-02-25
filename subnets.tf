@@ -4,7 +4,7 @@ resource "aws_subnet" "public" {
   cidr_block = var.PUBLIC_SUBNETS_CIDR[count.index]
 
   tags = {
-    Name = "${var.PROJECT}-${var.ENV}-public subnet"
+    Name = "${var.PROJECT}-${var.ENV}-public-subnet"
   }
 }
 
@@ -14,6 +14,6 @@ resource "aws_subnet" "private" {
   cidr_block = var.PRIVATE_SUBNETS_CIDR[count.index]
 
   tags = {
-    Name = "${var.PROJECT}-${var.ENV}-private subnet"
+    Name = "${var.PROJECT}-${var.ENV}-private-subnet"
   }
 }
