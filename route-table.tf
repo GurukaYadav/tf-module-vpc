@@ -54,7 +54,7 @@ resource "aws_route" "peer-default-to-private-subnet" {
 }
 
 resource "aws_route" "peer-roboshop-vpc-to-default-vpc" {
-  route_table_id            = DEFAULT_VPC_RT
+  route_table_id            = var.DEFAULT_VPC_RT
   destination_cidr_block    = var.VPC_CIDR
   vpc_peering_connection_id = aws_vpc_peering_connection.peer.id
 }
