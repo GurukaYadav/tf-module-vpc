@@ -6,12 +6,12 @@ resource "aws_internet_gateway" "igw" {
   }
 }
 
-resource "aws_eip" "public" {}
+resource "aws_eip" "ngw" {}
 
 
 resource "aws_nat_gateway" "ngw" {
   count = length(aws_subnet.public)
-  allocation_id = aws_eip.public.id
+  allocation_id = aws_eip.ngw.id
   subnet_id     = aws_subnet.public.*.id[0]
 
   tags = {
