@@ -41,13 +41,13 @@ resource "aws_route" "ngw-to-private" {
 }
 
 //routes for peering connection
-resource "aws_route" "peer-default-to-roboshop-vpc(private-subnet)" {
+resource "aws_route" "peer-default-to-public-subnet" {
   route_table_id            = aws_route_table.public.id
   destination_cidr_block    = var.DEFAULT_VPC_CIDR
   vpc_peering_connection_id = aws_vpc_peering_connection.peer.id
 }
 
-resource "aws_route" "peer-default-to-roboshop-vpc(private-subnet)" {
+resource "aws_route" "peer-default-to-private-subnet" {
   route_table_id            = aws_route_table.private.id
   destination_cidr_block    = var.DEFAULT_VPC_CIDR
   vpc_peering_connection_id = aws_vpc_peering_connection.peer.id
