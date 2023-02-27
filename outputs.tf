@@ -5,3 +5,8 @@ output "VPC_ID" {
 output "PRIVATE_SUBNET_ID" {
   value = aws_subnet.private.*.id
 }
+output "PRIVATE_SUBNETS_CIDR" {
+  value =
+}
+
+
