@@ -11,3 +11,12 @@ output "PUBLIC_SUBNET_ID" {
 }
 
 
+output "PUBLIC_SUBNET_CIDR" {
+  value = aws_subnet.public.*.cidr_block
+}
+
+output "PRIVATE_SUBNET_CIDR" {
+  value = aws_subnet.private.*.cidr_block
+}
+
+
